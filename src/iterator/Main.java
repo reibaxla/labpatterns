@@ -1,6 +1,8 @@
 package iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -19,11 +21,21 @@ import domain.Symptom;
 			p.addSymptom(new Symptom("s4", 10, 10), 4);
 			p.addSymptom(new Symptom("s5", 10, 10), 5);
 			
+			List<Symptom> sintomak = new ArrayList<>(p.getSymptoms());
+			
+			Adapter Adaptadorea = new Adapter(sintomak);
+			
+			while(Adaptadorea.hasPrevious()) {
+				System.out.println(Adaptadorea.previous());
+			}
+			
+			
 			Iterator i=p.iterator();
 			while(i.hasNext())
 				System.out.println(i.next());
+			
+
 
 		}
 
 	}
-

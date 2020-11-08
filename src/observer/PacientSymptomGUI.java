@@ -80,7 +80,7 @@ public class PacientSymptomGUI extends JFrame {
 				if (new Integer(weightField.getText())<=3) {
 		    	System.out.println("Symptom added :"+(Symptom)symptomComboBox.getSelectedItem());
 
-		    	pazientea.addSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName(),new Integer(weightField.getText()));
+		    	((Covid19Pacient) pazientea).addSymptomByName(((Symptom)symptomComboBox.getSelectedItem()).getName(),new Integer(weightField.getText()));
 				
 			} else errorLabel.setText("ERROR, Weight between [1..3]");
 				
@@ -114,7 +114,7 @@ public class PacientSymptomGUI extends JFrame {
 	    labelPacient = new JLabel("New label");
 		labelPacient.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		labelPacient.setBounds(271, 17, 131, 16);
-		labelPacient.setText(pazientea.getName());
+		labelPacient.setText(((Covid19Pacient) pazientea).getName());
 
 		contentPane.add(labelPacient);
 		this.setVisible(true);
